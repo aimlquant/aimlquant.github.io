@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI·ML·Quant</title>
+  <meta name="description" content="AI·머신러닝과 퀀트 투자를 책·논문·실습 중심으로 함께 공부하고, 발표와 토론을 자료와 영상으로 공개합니다.">
+  <link rel="canonical" href="https://aimlquant.github.io/">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #fafaf9;
+      --surface: #ffffff;
+      --text: #101114;
+      --muted: #686b73;
+      --border: #dfe2e7;
+      --primary: #0f2c59;
+      --primary-soft: #e8eef8;
+      --shadow: 0 18px 50px rgb(15 44 89 / 12%);
+      --shell-shadow: 0 28px 90px rgb(15 25 40 / 18%);
+      font-family:
+        Inter, Pretendard, "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic",
+        -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { min-width: 320px; background: #dfe3e9; }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 84% 8%, rgb(37 99 235 / 8%), transparent 32rem),
+        linear-gradient(180deg, #e8ebef 0%, #dfe3e9 100%);
+      line-height: 1.6;
+      letter-spacing: -0.01em;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .shell {
+      width: min(1080px, calc(100% - 48px));
+      margin: 32px auto;
+      padding: clamp(34px, 5vw, 64px) clamp(28px, 6vw, 72px) clamp(48px, 6vw, 80px);
+      background: var(--bg);
+      border-radius: 4px;
+      box-shadow: var(--shell-shadow);
+    }
+    .brand { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+    .brand-name {
+      font-weight: 700; font-size: 1rem;
+      border-left: 4px solid var(--primary); padding-left: 10px;
+    }
+    .brand-sub {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em;
+      color: var(--muted);
+    }
+    h1 {
+      margin: clamp(40px, 7vw, 72px) 0 0;
+      font-size: clamp(2.6rem, 9vw, 4.6rem);
+      line-height: 1.04; letter-spacing: -0.04em;
+    }
+    .lead {
+      margin: 18px 0 0; max-width: 46ch;
+      font-size: clamp(1rem, 2.4vw, 1.15rem); color: var(--muted);
+    }
+    .spaces {
+      display: grid; gap: 16px; margin: clamp(36px, 6vw, 56px) 0 0;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+    .space {
+      display: block; padding: 24px 24px 26px; text-decoration: none;
+      background: var(--surface); border: 1px solid var(--border);
+      border-top: 3px solid var(--primary); border-radius: 3px;
+      transition: box-shadow 0.18s ease, transform 0.18s ease;
+    }
+    .space:hover, .space:focus-visible {
+      box-shadow: var(--shadow); transform: translateY(-2px);
+    }
+    .space h2 { margin: 10px 0 6px; font-size: 1.35rem; letter-spacing: -0.02em; }
+    .space p { margin: 0; font-size: 0.92rem; color: var(--muted); }
+    .tag {
+      display: inline-block; padding: 4px 10px; border-radius: 999px;
+      background: var(--primary-soft); color: var(--primary);
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em;
+    }
+    .space--soon { border-top-color: var(--border); opacity: 0.66; }
+    .space--soon .tag { background: #ececf0; color: var(--muted); }
+    .links {
+      display: flex; flex-wrap: wrap; gap: 12px;
+      margin: clamp(36px, 6vw, 56px) 0 0;
+      padding-top: 28px; border-top: 1px solid var(--border);
+    }
+    .button {
+      display: inline-block; padding: 12px 22px; border-radius: 3px;
+      background: var(--primary); color: #fff; text-decoration: none;
+      font-weight: 700; font-size: 0.92rem;
+    }
+    .button--ghost {
+      background: transparent; color: var(--primary);
+      border: 1px solid var(--border);
+    }
+    .note { margin: 20px 0 0; font-size: 0.85rem; color: var(--muted); }
+    .note a { font-weight: 600; }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <div class="brand">
+      <span class="brand-name">AIML Quant</span>
+      <span class="brand-sub">OPEN STUDY ARCHIVE</span>
+    </div>
+
+    <h1>AI·ML·Quant</h1>
+    <p class="lead">
+      AI·머신러닝과 퀀트 투자를 책·논문·실습 중심으로 함께 공부하고,
+      발표와 토론을 자료와 영상으로 공개합니다.
+    </p>
+
+    <div class="spaces">
+      <a class="space" href="/study/">
+        <span class="tag">STUDY</span>
+        <h2>스터디</h2>
+        <p>매주 토요일 진행하는 교재 스터디. 회차별 리포트·발표자료와 공개 영상.</p>
+      </a>
+      <div class="space space--soon">
+        <span class="tag">SEMINAR</span>
+        <h2>세미나</h2>
+        <p>준비 중입니다.</p>
+      </div>
+      <div class="space space--soon">
+        <span class="tag">LECTURE</span>
+        <h2>강의</h2>
+        <p>준비 중입니다.</p>
+      </div>
+    </div>
+
+    <div class="links">
+      <a class="button" href="https://www.youtube.com/@aimlquant"
+         target="_blank" rel="noopener noreferrer">YouTube 채널 ↗</a>
+      <a class="button button--ghost" href="https://open.kakao.com/o/gtYt0KGi"
+         target="_blank" rel="noopener noreferrer">카카오 오픈채팅 ↗</a>
+      <a class="button button--ghost" href="https://github.com/aimlquant"
+         target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+    </div>
+    <p class="note">
+      오픈채팅 입장에는 참가 코드가 필요합니다.
+      <a href="mailto:restful3@gmail.com">restful3@gmail.com</a>
+      으로 메일 주시면 안내해 드립니다.
+    </p>
+  </main>
+</body>
+</html>
