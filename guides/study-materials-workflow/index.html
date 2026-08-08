@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>스터디 자료 만드는 법 | AIML Quant</title>
+  <meta name="description" content="원자료 감사부터 리포트와 발표자료 제작, 검증, 공개까지 AIML Quant의 스터디 자료 제작 흐름을 영상과 함께 소개합니다.">
+  <link rel="canonical" href="https://aimlquant.github.io/guides/study-materials-workflow/">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #fafaf9;
+      --surface: #ffffff;
+      --text: #101114;
+      --muted: #686b73;
+      --border: #dfe2e7;
+      --primary: #0f2c59;
+      --primary-soft: #e8eef8;
+      --shell-shadow: 0 28px 90px rgb(15 25 40 / 18%);
+      font-family:
+        Inter, Pretendard, "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic",
+        -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { min-width: 320px; background: #dfe3e9; }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 84% 8%, rgb(37 99 235 / 8%), transparent 32rem),
+        linear-gradient(180deg, #e8ebef 0%, #dfe3e9 100%);
+      line-height: 1.65;
+      letter-spacing: -0.01em;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .shell {
+      width: min(1080px, calc(100% - 48px));
+      margin: 32px auto;
+      padding: clamp(34px, 5vw, 64px) clamp(28px, 6vw, 72px) clamp(48px, 6vw, 80px);
+      background: var(--bg);
+      border-radius: 4px;
+      box-shadow: var(--shell-shadow);
+    }
+    .brand { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+    .brand-name {
+      font-weight: 700; font-size: 1rem;
+      border-left: 4px solid var(--primary); padding-left: 10px;
+    }
+    .brand-sub {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em;
+      color: var(--muted);
+    }
+    .back {
+      display: inline-block; margin-top: 30px; color: var(--primary);
+      font-size: 0.9rem; font-weight: 700; text-decoration: none;
+    }
+    h1 {
+      margin: clamp(28px, 5vw, 48px) 0 0;
+      font-size: clamp(2.25rem, 7vw, 4.25rem);
+      line-height: 1.08; letter-spacing: -0.045em;
+    }
+    .lead {
+      margin: 18px 0 0; max-width: 52ch;
+      color: var(--muted); font-size: clamp(1rem, 2.4vw, 1.15rem);
+    }
+    .video {
+      position: relative; margin-top: clamp(32px, 6vw, 56px);
+      padding-top: 56.25%; overflow: hidden; border-radius: 4px;
+      background: #0a1628; box-shadow: 0 18px 50px rgb(15 44 89 / 16%);
+    }
+    .video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .video-pending {
+      position: absolute; inset: 0; display: grid; place-items: center;
+      padding: 24px; color: #dbe6f6; text-align: center; font-weight: 700;
+    }
+    .section { margin-top: clamp(42px, 7vw, 68px); }
+    .eyebrow {
+      margin: 0 0 8px; color: var(--primary);
+      font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em;
+    }
+    h2 { margin: 0; font-size: clamp(1.55rem, 4vw, 2.15rem); letter-spacing: -0.03em; }
+    .section-intro { margin: 12px 0 0; max-width: 62ch; color: var(--muted); }
+    .steps {
+      display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px; margin: 24px 0 0; padding: 0; list-style: none;
+      counter-reset: workflow;
+    }
+    .steps li {
+      counter-increment: workflow; min-width: 0; padding: 22px;
+      background: var(--surface); border: 1px solid var(--border); border-radius: 3px;
+    }
+    .steps li::before {
+      content: counter(workflow, decimal-leading-zero);
+      display: block; margin-bottom: 8px; color: var(--primary);
+      font-size: 0.75rem; font-weight: 800; letter-spacing: 0.12em;
+    }
+    .steps strong { display: block; font-size: 1.03rem; }
+    .steps span { display: block; margin-top: 6px; color: var(--muted); font-size: 0.9rem; }
+    .principles {
+      margin: 24px 0 0; padding: 24px 26px 24px 44px;
+      background: var(--primary-soft); border-left: 4px solid var(--primary);
+    }
+    .principles li + li { margin-top: 8px; }
+    .links {
+      display: flex; flex-wrap: wrap; gap: 12px;
+      margin-top: clamp(38px, 6vw, 56px); padding-top: 28px;
+      border-top: 1px solid var(--border);
+    }
+    .button {
+      display: inline-block; padding: 12px 22px; border-radius: 3px;
+      background: var(--primary); color: #fff; text-decoration: none;
+      font-size: 0.92rem; font-weight: 700;
+    }
+    .button--ghost { background: transparent; color: var(--primary); border: 1px solid var(--border); }
+    @media (max-width: 640px) {
+      .shell { width: calc(100% - 24px); margin: 12px auto; padding: 28px 20px 44px; }
+      .steps { grid-template-columns: 1fr; }
+      .steps li { padding: 19px; }
+      .button { width: 100%; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <div class="brand">
+      <span class="brand-name">AIML Quant</span>
+      <span class="brand-sub">OPERATIONS GUIDE</span>
+    </div>
+    <a class="back" href="/">← 홈으로</a>
+
+    <h1>스터디 자료 만드는 법</h1>
+    <p class="lead">
+      원자료를 빠짐없이 감사하고, 읽히는 리포트와 발표 가능한 덱으로 바꾼 뒤,
+      검증과 리뷰를 거쳐 공개 페이지까지 연결하는 AIML Quant의 제작 흐름입니다.
+    </p>
+
+    <div class="video" aria-label="스터디 자료 만드는 법 영상">
+      <!-- VIDEO_EMBED -->
+      <div class="video-pending">영상 공개 준비 중</div>
+    </div>
+
+    <section class="section">
+      <p class="eyebrow">END-TO-END WORKFLOW</p>
+      <h2>자료는 한 번에 쓰지 않고, 단계별 증거를 남깁니다</h2>
+      <p class="section-intro">
+        좋은 발표자료는 예쁜 슬라이드보다 먼저, 원문 좌표와 설명의 근거가 정확해야 합니다.
+        각 단계의 산출물을 다음 단계의 입력으로 사용하면 누락과 되돌림을 줄일 수 있습니다.
+      </p>
+      <ol class="steps">
+        <li><strong>원자료 감사</strong><span>목차·절·표·그림·코드의 좌표와 순서를 먼저 확정합니다.</span></li>
+        <li><strong>재현과 분석</strong><span>핵심 주장과 실험을 실행 가능한 코드와 데이터로 확인합니다.</span></li>
+        <li><strong>리포트 작성</strong><span>근거, 해석, 한계가 연결되는 장문 설명을 먼저 완성합니다.</span></li>
+        <li><strong>발표 덱 구성</strong><span>리포트의 논리를 발표 흐름과 화면 단위로 압축합니다.</span></li>
+        <li><strong>검증과 시각 감사</strong><span>자동 검증과 최종 크기 렌더 검수를 함께 통과시킵니다.</span></li>
+        <li><strong>공개와 연결</strong><span>자료·영상·회차 페이지를 서로 연결하고 실제 URL을 확인합니다.</span></li>
+      </ol>
+    </section>
+
+    <section class="section">
+      <p class="eyebrow">WORKING PRINCIPLES</p>
+      <h2>제작 품질을 지키는 세 가지 원칙</h2>
+      <ul class="principles">
+        <li>추측으로 채우기 전에 원자료와 검증기가 기대하는 구조를 확인합니다.</li>
+        <li>HTML·SVG·슬라이드는 소스뿐 아니라 최종 표시 크기의 실제 렌더를 봅니다.</li>
+        <li>공개 전에는 링크, 자막, 썸네일, 민감정보 노출 여부를 독립적으로 점검합니다.</li>
+      </ul>
+    </section>
+
+    <div class="links">
+      <a class="button" href="/study/">스터디 자료 보기 →</a>
+      <a class="button button--ghost" href="https://github.com/aimlquant/study"
+         target="_blank" rel="noopener noreferrer">제작 도구 저장소 ↗</a>
+      <a class="button button--ghost" href="https://www.youtube.com/@aimlquant"
+         target="_blank" rel="noopener noreferrer">YouTube 채널 ↗</a>
+    </div>
+  </main>
+</body>
+</html>
