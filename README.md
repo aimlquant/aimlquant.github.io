@@ -6,8 +6,9 @@
 | 공간 | 저장소 | URL |
 |---|---|---|
 | 스터디 | [`aimlquant/study`](https://github.com/aimlquant/study) | `/study/` |
+| 주간 AI 브리핑 | [`aimlquant/briefing`](https://github.com/aimlquant/briefing) | `/briefing/` |
 | 운영 가이드 | 이 저장소 | `/guides/` |
-| 세미나 | (예정) | `/seminar/` |
+| 세미나 | [`aimlquant/seminar`](https://github.com/aimlquant/seminar) | `/seminar/` |
 | 강의 | (예정) | `/lecture/` |
 
 이 저장소 이름은 바꿀 수 없다. GitHub는 `<org>.github.io` 라는 이름의
