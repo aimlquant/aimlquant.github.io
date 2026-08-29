@@ -1,13 +1,13 @@
 # aimlquant.github.io
 
 조직 루트 `https://aimlquant.github.io/` 를 서빙하는 랜딩 저장소다.
-정적 랜딩과 독립 운영 가이드를 제공하며, 목적별 공간으로 보내는 역할을 한다.
+정적 랜딩과 독립 운영 페이지를 제공하며, 목적별 공간으로 보내는 역할을 한다.
 
 | 공간 | 저장소 | URL |
 |---|---|---|
 | 스터디 | [`aimlquant/study`](https://github.com/aimlquant/study) | `/study/` |
 | 주간 AI 브리핑 | [`aimlquant/briefing`](https://github.com/aimlquant/briefing) | `/briefing/` |
-| 운영 가이드 | 이 저장소 | `/guides/` |
+| 운영 | 이 저장소 | `/operations/` |
 | 세미나 | [`aimlquant/seminar`](https://github.com/aimlquant/seminar) | `/seminar/` |
 | 강의 | (예정) | `/lecture/` |
 
