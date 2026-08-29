@@ -94,13 +94,39 @@
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     }
     .recording {
-      display: block; padding: 18px 20px; text-decoration: none;
+      display: flex; flex-direction: column; overflow: hidden;
       background: var(--surface); border: 1px solid var(--border); border-radius: 3px;
       transition: border-color 0.18s ease, box-shadow 0.18s ease;
     }
-    .recording:hover, .recording:focus-visible {
+    .recording:hover, .recording:focus-within {
       border-color: var(--primary); box-shadow: var(--shadow);
     }
+    .thumb {
+      position: relative; display: block; width: 100%; aspect-ratio: 16 / 9;
+      padding: 0; border: 0; background: #000; cursor: pointer; overflow: hidden;
+    }
+    .thumb img {
+      display: block; width: 100%; height: 100%;
+      object-fit: cover; transition: opacity 0.18s ease;
+    }
+    .thumb:hover img, .thumb:focus-visible img { opacity: 0.82; }
+    .play {
+      position: absolute; left: 10px; bottom: 10px;
+      width: 40px; height: 28px; border-radius: 6px;
+      background: rgb(15 25 40 / 80%); display: grid; place-items: center;
+      box-shadow: 0 2px 10px rgb(0 0 0 / 32%);
+      transition: background 0.18s ease;
+    }
+    .play svg { display: block; margin-left: 1px; }
+    .thumb:hover .play, .thumb:focus-visible .play { background: #c00; }
+    .recording iframe { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; }
+    .recording-body { padding: 14px 16px 16px; }
+    .more {
+      display: inline-block; margin-top: 10px; color: var(--muted);
+      font-size: 0.8rem; font-weight: 600; text-decoration: none;
+      border-bottom: 1px solid var(--border);
+    }
+    .more:hover, .more:focus-visible { color: var(--primary); border-bottom-color: var(--primary); }
     .recording span {
       display: block; color: var(--primary); font-size: 0.68rem;
       font-weight: 700; letter-spacing: 0.08em;
@@ -169,23 +195,50 @@
       <h2 id="latest-title">최근 공개 영상</h2>
       <p class="latest-intro">2026년 8월 29일 스터디 발표와 운영 논의를 공개했습니다.</p>
       <div class="recordings">
-        <a class="recording" href="/study/sessions/2026-08-29-machine-trading-ch06/">
-          <span>QUANT · MACHINE TRADING CH.6</span>
-          <strong>일중 거래와 시장 미시구조</strong>
-        </a>
-        <a class="recording" href="/study/sessions/2026-08-29-machine-trading-ch07/">
-          <span>QUANT · MACHINE TRADING CH.7</span>
-          <strong>비트코인</strong>
-        </a>
-        <a class="recording" href="/study/sessions/2026-08-29-kg-llm-ch07/">
-          <span>AI·ML · 지식 그래프와 LLM CH.7</span>
-          <strong>개체명 중의성 해소</strong>
-        </a>
-        <a class="recording" href="https://www.youtube.com/watch?v=mxVNBlexVDE"
-           target="_blank" rel="noopener noreferrer">
-          <span>AIML QUANT OPERATIONS</span>
-          <strong>다음 교재·참여·콘텐츠 제작 논의 ↗</strong>
-        </a>
+        <article class="recording">
+          <button class="thumb" type="button" data-vid="yYyXQPyXfpc" aria-label="일중 거래와 시장 미시구조 재생">
+            <img src="https://i.ytimg.com/vi/yYyXQPyXfpc/mqdefault.jpg" alt="" width="320" height="180" loading="lazy">
+            <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span>
+          </button>
+          <div class="recording-body">
+            <span>QUANT · MACHINE TRADING CH.6</span>
+            <strong>일중 거래와 시장 미시구조</strong>
+            <a class="more" href="/study/sessions/2026-08-29-machine-trading-ch06/">회차 자료 보기 →</a>
+          </div>
+        </article>
+        <article class="recording">
+          <button class="thumb" type="button" data-vid="egmnvOWKOyo" aria-label="비트코인 재생">
+            <img src="https://i.ytimg.com/vi/egmnvOWKOyo/mqdefault.jpg" alt="" width="320" height="180" loading="lazy">
+            <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span>
+          </button>
+          <div class="recording-body">
+            <span>QUANT · MACHINE TRADING CH.7</span>
+            <strong>비트코인</strong>
+            <a class="more" href="/study/sessions/2026-08-29-machine-trading-ch07/">회차 자료 보기 →</a>
+          </div>
+        </article>
+        <article class="recording">
+          <button class="thumb" type="button" data-vid="2ehk6U8P2qE" aria-label="개체명 중의성 해소 재생">
+            <img src="https://i.ytimg.com/vi/2ehk6U8P2qE/mqdefault.jpg" alt="" width="320" height="180" loading="lazy">
+            <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span>
+          </button>
+          <div class="recording-body">
+            <span>AI·ML · 지식 그래프와 LLM CH.7</span>
+            <strong>개체명 중의성 해소</strong>
+            <a class="more" href="/study/sessions/2026-08-29-kg-llm-ch07/">회차 자료 보기 →</a>
+          </div>
+        </article>
+        <article class="recording">
+          <button class="thumb" type="button" data-vid="mxVNBlexVDE" aria-label="다음 교재·참여·콘텐츠 제작 논의 재생">
+            <img src="https://i.ytimg.com/vi/mxVNBlexVDE/mqdefault.jpg" alt="" width="320" height="180" loading="lazy">
+            <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span>
+          </button>
+          <div class="recording-body">
+            <span>AIML QUANT OPERATIONS</span>
+            <strong>다음 교재·참여·콘텐츠 제작 논의</strong>
+            <a class="more" href="/operations/">운영 페이지 보기 →</a>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -203,5 +256,17 @@
       으로 메일 주시면 안내해 드립니다.
     </p>
   </main>
+  <script>
+    for (const b of document.querySelectorAll(".thumb")) {
+      b.addEventListener("click", () => {
+        const f = document.createElement("iframe");
+        f.src = "https://www.youtube-nocookie.com/embed/" + b.dataset.vid + "?autoplay=1&rel=0";
+        f.title = b.getAttribute("aria-label");
+        f.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+        f.allowFullscreen = true;
+        b.replaceWith(f);
+      });
+    }
+  </script>
 </body>
 </html>
