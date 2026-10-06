@@ -6,7 +6,7 @@
 | 공간 | 저장소 | URL |
 |---|---|---|
 | 스터디 | [`aimlquant/study`](https://github.com/aimlquant/study) | `/study/` |
-| 주간 AI 브리핑 | [`aimlquant/briefing`](https://github.com/aimlquant/briefing) | `/briefing/` |
+| 주간 AI 브리핑 | [`aimlquant/briefing`](https://github.com/aimlquant/briefing) | 2026-10-07 중단, Pages 내림 |
 | 운영 | 이 저장소 | `/operations/` |
 | 세미나 | [`aimlquant/seminar`](https://github.com/aimlquant/seminar) | `/seminar/` |
 | 강의 | (예정) | `/lecture/` |
